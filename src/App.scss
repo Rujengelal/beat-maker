@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #efefef;
+  margin: 1rem;
+}
+.navbar {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+
+  .file-name {
+    margin: 1rem;
+    // min-width: 10rem;
+    flex-grow: 1;
+  }
+  .navbar-nav {
+    flex-grow: 3;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  td {
+    width: 2rem;
+    border: 2px solid black;
+    height: 2rem;
+    margin: 0;
+  }
+  & tr td:first-child {
+    min-width: 5rem;
+    border: none;
+  }
+}
+.beat-active {
+  background-color: blue;
+}
+.beat-inactive {
+  background-color: red;
+}
+
+.player-controls {
+  input,
+  button {
+    margin: 1rem;
+  }
+}
