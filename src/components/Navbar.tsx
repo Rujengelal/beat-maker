@@ -7,10 +7,12 @@ function Navbar() {
   const context = useContext(contextValue);
   // useEffect(() => {}, []);
   const [fileName, setFileName] = useState(() => {
-    let values = localStorage.getItem("project");
+    try {
+      let values = localStorage.getItem("project");
 
-    let data = JSON.parse(values ? values : "");
-    if (data.name) return data.name;
+      let data = JSON.parse(values ? values : "");
+      if (data.name) return data.name;
+    } catch (e) {}
     return "Untitled";
   });
   return (

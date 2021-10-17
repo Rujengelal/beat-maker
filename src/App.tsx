@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import "./App.scss";
 import BeatPlayer from "./components/BeatPlayer";
-import { Howl } from "howler";
+// import { Howl } from "howler";
 import context from "./store";
 
 let INSTRUMENTS = ["Drum", "Snare", "Cowbell", "Loudbass", "major"];
@@ -18,11 +18,13 @@ const App: FC = () => {
     return mat;
   });
   useEffect(() => {
-    let values = localStorage.getItem("project");
+    try {
+      let values = localStorage.getItem("project");
 
-    let data = JSON.parse(values ? values : "");
-    if (data.grid) setInstrumentGrid(data.grid);
-    if (data.bpm) setBpm(data.bpm);
+      let data = JSON.parse(values ? values : "");
+      if (data.grid) setInstrumentGrid(data.grid);
+      if (data.bpm) setBpm(data.bpm);
+    } catch (e) {}
     console.log("APP loaded once");
     return () => {
       console.log("APP closed once");
